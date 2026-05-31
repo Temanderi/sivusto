@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Ensimmäinen postaus",
+        "date": "2026-05-31",
+        "content": "Tämä on ensimmäinen blogipostaus."
+    },
+
+    {
+        "title": "Vanha postaus",
+        "date": "2024-03-15",
+        "content": "Tämä on vanhempi postaus."
+    },
+
+    {
+        "title": "Postaus ilman päivämäärää",
+        "content": "Päivämäärä ei ole pakollinen."
+    }
+]
