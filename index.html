@@ -3,55 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koodi Testisivu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: white;
-            text-align: center;
-            padding-top: 50px;
-        }
+    <title>Blogi</title>
 
-        .box {
-            background: #2c2c2c;
-            width: 400px;
-            margin: auto;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        button {
-            background: #0078d7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #005fa3;
-        }
-    </style>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="box">
-        <h1>Koodi HTML Testi</h1>
-        <p>Tämä on yksinkertainen testisivu.</p>
 
-        <button onclick="naytaViesti()">
-            Klikkaa minua
-        </button>
+    <div class="container">
 
-        <p id="tulos"></p>
+        <img src="banner.png" alt="Banner" class="banner">
+
+        <div id="posts"></div>
+
     </div>
 
-    <script>
-        function naytaViesti() {
-            document.getElementById("tulos").textContent =
-                "JavaScript toimii!";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
