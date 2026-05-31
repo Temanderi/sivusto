@@ -5,7 +5,6 @@ fetch("posts.json")
         posts.sort((a, b) => {
             if (!a.date) return 1;
             if (!b.date) return -1;
-
             return new Date(b.date) - new Date(a.date);
         });
 
@@ -17,7 +16,9 @@ fetch("posts.json")
             div.className = "post";
 
             div.innerHTML = `
-                <div class="post-title">${post.title}</div>
+                <a href="posts/${post.slug}.html" class="post-link">
+                    <div class="post-title">${post.title}</div>
+                </a>
 
                 ${
                     post.date
