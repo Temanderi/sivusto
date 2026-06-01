@@ -1,20 +1,14 @@
-<div id="posts"></div>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postaus 1</title>
+</head>
+<body>
 
-<script>
-const posts = [
-  { id: "1", title: "Postaus 1", content: "Hei maailma" },
-  { id: "2", title: "Postaus 2", content: "Toka teksti" }
-];
+    <h1>Ek postaus</h1>
+    <p>Tässä on mun eka blogipostaus.</p>
 
-const container = document.getElementById("posts");
-
-posts.forEach(p => {
-  container.innerHTML += `
-    <div>
-      <h2>${p.title}</h2>
-      <p>${p.content}</p>
-      <hr>
-    </div>
-  `;
-});
-</script>
+</body>
+</html>
