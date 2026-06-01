@@ -1,46 +1,24 @@
-<!DOCTYPE html>
-<html lang="fi">
-<head>
-    <meta charset="UTF-8">
-    <title>Postaus</title>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+}
 
-<div class="container">
+a {
+    text-decoration: none;
+    color: blue;
+}
 
-    <a href="index.html">← Takaisin</a>
-
-    <h1 id="title"></h1>
-    <p id="content"></p>
-
-    <!-- Kommentit otsikko -->
-    <div class="comment-header">Kommentit</div>
-
-    <!-- Disqus -->
-    <div id="disqus_thread"></div>
-
-</div>
-
-<!-- Disqus script -->
-<script id="dsq-count-scr" src="//taikatemppu-link.disqus.com/count.js" async></script>
-
-<script>
-var disqus_config = function () {
-    this.page.url = window.location.href;
-    this.page.identifier = window.location.href;
-};
-
-(function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://taikatemppu-link.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-})();
-</script>
-
-<script src="post.js"></script>
-
-</body>
-</html>
+.comment-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 40px 0 20px 0;
+    padding: 10px 15px;
+    border-left: 5px solid black;
+}
