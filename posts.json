@@ -2,11 +2,13 @@
   {
     "title": "Ensimmäinen postaus",
     "date": "2026-05-31",
-    "slug": "postaus1"
+    "slug": "postaus1",
+    "content": "Tämä on eka postaus"
   },
   {
     "title": "Vanha postaus",
     "date": "2024-03-15",
-    "slug": "vanha-postaus"
+    "slug": "vanha-postaus",
+    "content": "Tämä on vanha postaus"
   }
 ]
