@@ -1,3 +1,5 @@
+const basePath = "/mun-blogit/";
+
 fetch("posts.json")
     .then(response => response.json())
     .then(posts => {
@@ -16,7 +18,7 @@ fetch("posts.json")
             div.className = "post";
 
             div.innerHTML = `
-                <a href="posts/${post.slug}.html" class="post-link">
+                <a href="${basePath}${post.slug}.html" class="post-link">
                     <div class="post-title">${post.title}</div>
                 </a>
 
