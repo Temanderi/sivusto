@@ -9,7 +9,7 @@ fetch("posts.json")
       const div = document.createElement("div");
 
       div.innerHTML = `
-        <a href="post.html?slug=${post.slug}">
+        <a href="${post.slug}.html">
           <h2>${post.title}</h2>
         </a>
       `;
