@@ -22,28 +22,11 @@
 
     </div>
 
-    <script src="script.js"></script>
-
-    <!-- DISQUS CONFIG -->
-    <script>
-    var disqus_config = function () {
-        this.page.url = window.location.href;
-        this.page.identifier = "blogi-main";
-    };
-    </script>
-
-    <!-- DISQUS EMBED -->
-    <script>
-    (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://taikatemppu-link.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-    </script>
-
-    <!-- COMMENT COUNT (valinnainen) -->
-    <script id="dsq-count-scr" src="//taikatemppu-link.disqus.com/count.js" async></script>
+<script src="https://giscus.app/client.js"
+        data-repo="YOUR/REPO"
+        data-mapping="pathname"
+        ...>
+</script>
 
 </body>
 </html>
