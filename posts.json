@@ -1,17 +1,10 @@
 [
   {
     "title": "Ensimmäinen postaus",
-    "slug": "eka",
-    "content": "eka teksti"
+    "slug": "postaus1"
   },
   {
-    "title": "Toinen postaus",
-    "slug": "toka",
-    "content": "toka teksti"
-  },
-  {
-    "title": "Kolmas postaus",
-    "slug": "kolmas",
-    "content": "tää on uusi"
+    "title": "Vanha postaus",
+    "slug": "postaus2"
   }
 ]
