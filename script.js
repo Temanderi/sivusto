@@ -1,5 +1,7 @@
 console.log("JS toimii");
 
+div.className = "post-card";
+
 fetch("posts.json")
   .then(r => {
     console.log("STATUS:", r.status);
