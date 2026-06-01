@@ -1,24 +1,18 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("slug");
 
-.container {
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
-}
+fetch("posts.json")
+  .then(r => r.json())
+  .then(posts => {
 
-a {
-    text-decoration: none;
-    color: blue;
-}
+    const post = posts.find(p => p.slug === slug);
 
-.comment-header {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 40px 0 20px 0;
-    padding: 10px 15px;
-    border-left: 5px solid black;
-}
+    if (!post) {
+      document.body.innerHTML = "<h1>Postia ei löydy</h1>";
+      return;
+    }
+
+    document.getElementById("title").innerText = post.title;
+    document.getElementById("content").innerText = post.content;
+
+  });
