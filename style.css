@@ -1,43 +1,49 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background: radial-gradient(circle at top, #1b1b24, #0b0b10);
     color: #eaeaea;
 }
 
-/* keskitetty “ikkuna” */
+/* keskellä oleva “ikkuna” */
 .container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 50px auto;
     padding: 30px;
-    background: rgba(20, 20, 28, 0.85);
+    background: rgba(20, 20, 28, 0.88);
     border: 1px solid #2a2a3a;
     border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
     backdrop-filter: blur(6px);
 }
 
-/* otsikko (index + postaus) */
+/* isot otsikot */
 h1 {
-    font-size: 42px;
+    font-size: 44px;
     margin-bottom: 20px;
     color: #ffffff;
 }
 
-/* postauskortit indexissä */
+h2 {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+/* postauskortti indexissä */
 .post-card {
     background: #1a1a25;
     padding: 18px;
     margin: 12px 0;
     border-radius: 12px;
     border: 1px solid #2f2f45;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 .post-card:hover {
     transform: translateY(-3px);
     border-color: #4da3ff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 /* linkit */
@@ -51,20 +57,20 @@ a:hover {
     color: #7cc0ff;
 }
 
-/* postauksen otsikko */
-h1#title {
-    font-size: 44px;
-    margin-bottom: 20px;
-}
-
 /* postauksen teksti */
-p, .content {
+p {
     font-size: 20px;
     line-height: 1.7;
     color: #dddddd;
 }
 
-/* kommenttiotsikko */
+/* otsikko postauksessa */
+#title {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+/* kommenttiosio */
 .comment-header {
     margin-top: 50px;
     font-size: 26px;
@@ -73,8 +79,7 @@ p, .content {
     padding-left: 12px;
 }
 
-/* Disqus boxi vähän irti */
+/* disqus */
 #disqus_thread {
     margin-top: 20px;
-    padding-top: 10px;
 }
