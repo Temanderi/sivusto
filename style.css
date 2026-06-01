@@ -1,24 +1,62 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f12;
+    color: #e6e6e6;
 }
 
+/* container */
 .container {
-    max-width: 700px;
+    max-width: 800px;
     margin: auto;
     padding: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: blue;
+/* otsikot */
+h1, h2 {
+    color: #ffffff;
 }
 
+/* linkit */
+a {
+    color: #4da3ff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #7cc0ff;
+}
+
+/* postaus kortti */
+.post-card {
+    background: #1a1a22;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #2a2a35;
+    transition: 0.2s;
+}
+
+.post-card:hover {
+    transform: scale(1.02);
+    border-color: #4da3ff;
+}
+
+/* postauksen sisältö */
+.content {
+    background: #1a1a22;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 10px;
+    border: 1px solid #2a2a35;
+}
+
+/* kommentit */
 .comment-header {
-    font-size: 28px;
+    margin-top: 40px;
+    font-size: 22px;
     font-weight: bold;
-    margin: 40px 0 20px 0;
-    padding: 10px 15px;
-    border-left: 5px solid black;
+    border-left: 4px solid #4da3ff;
+    padding-left: 10px;
 }
