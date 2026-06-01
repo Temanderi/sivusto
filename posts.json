@@ -1,6 +1,10 @@
 [
   {
-    "title": "Ensimmäinen postaus",
+    "title": "Postaus 1",
     "slug": "postaus1"
+  },
+  {
+    "title": "Postaus 2",
+    "slug": "postaus2"
   }
 ]
