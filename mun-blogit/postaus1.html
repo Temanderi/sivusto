@@ -10,12 +10,24 @@
     <h1>Eka postaus</h1>
     <p>Tässä on mun eka blogipostaus.</p>
 
-<script>
-var disqus_config = function () {
-  this.page.url = window.location.href;
-  this.page.identifier = "post1";
-};
-</script>
-    
+    <!-- KOMMENTIT -->
+    <div id="disqus_thread"></div>
+
+    <script>
+    var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = "post1";
+    };
+    </script>
+
+    <script>
+    (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://taikatemppu-link.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+
 </body>
 </html>
