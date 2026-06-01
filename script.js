@@ -1,49 +1,33 @@
+console.log("JS toimii");
+
 fetch("posts.json")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("posts.json ei löytynyt");
-        }
-        return response.json();
-    })
-    .then(posts => {
+  .then(r => {
+    console.log("STATUS:", r.status);
+    return r.json();
+  })
+  .then(posts => {
 
-        posts.sort((a, b) => {
-            if (!a.date) return 1;
-            if (!b.date) return -1;
-            return new Date(b.date) - new Date(a.date);
-        });
+    console.log("POSTS:", posts);
 
-        const container = document.getElementById("posts");
+    const container = document.getElementById("posts");
 
-        if (!container) {
-            console.error("#posts elementti puuttuu HTML:stä");
-            return;
-        }
+    if (!container) {
+      console.error("EI LÖYDY #posts HTML:stä");
+      return;
+    }
 
-        posts.forEach(post => {
+    posts.forEach(post => {
 
-            const div = document.createElement("div");
-            div.className = "post";
+      const div = document.createElement("div");
 
-            div.innerHTML = `
-                <a href="${post.slug}.html" class="post-link">
-                    <div class="post-title">${post.title}</div>
-                </a>
+      div.innerHTML = `
+        <a href="${post.slug}.html">
+          <h2>${post.title}</h2>
+        </a>
+      `;
 
-                ${
-                    post.date
-                        ? `<div class="post-date">${post.date}</div>`
-                        : ""
-                }
-
-                <div class="post-content">
-                    ${post.content}
-                </div>
-            `;
-
-            container.appendChild(div);
-        });
-    })
-    .catch(err => {
-        console.error("Virhe ladattaessa posts.json:", err);
+      container.appendChild(div);
     });
+
+  })
+  .catch(err => console.error("FETCH ERROR:", err));
