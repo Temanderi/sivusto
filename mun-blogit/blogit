@@ -1,0 +1,20 @@
+<div id="posts"></div>
+
+<script>
+const posts = [
+  { id: "1", title: "Postaus 1", content: "Hei maailma" },
+  { id: "2", title: "Postaus 2", content: "Toka teksti" }
+];
+
+const container = document.getElementById("posts");
+
+posts.forEach(p => {
+  container.innerHTML += `
+    <div>
+      <h2>${p.title}</h2>
+      <p>${p.content}</p>
+      <hr>
+    </div>
+  `;
+});
+</script>
