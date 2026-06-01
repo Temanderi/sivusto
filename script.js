@@ -1,7 +1,10 @@
-const basePath = "/mun-blogit/";
-
 fetch("posts.json")
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("posts.json ei löytynyt");
+        }
+        return response.json();
+    })
     .then(posts => {
 
         posts.sort((a, b) => {
@@ -12,13 +15,18 @@ fetch("posts.json")
 
         const container = document.getElementById("posts");
 
+        if (!container) {
+            console.error("#posts elementti puuttuu HTML:stä");
+            return;
+        }
+
         posts.forEach(post => {
 
             const div = document.createElement("div");
             div.className = "post";
 
             div.innerHTML = `
-                <a href="${basePath}${post.slug}.html" class="post-link">
+                <a href="${post.slug}.html" class="post-link">
                     <div class="post-title">${post.title}</div>
                 </a>
 
@@ -35,4 +43,7 @@ fetch("posts.json")
 
             container.appendChild(div);
         });
+    })
+    .catch(err => {
+        console.error("Virhe ladattaessa posts.json:", err);
     });
