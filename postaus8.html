@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<link rel="stylesheet" href="style.css">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Postaus</title>
+
+</head>
+<body>
+
+<!-- 🔙 takaisin -->
+<a href="index.html">← Takaisin etusivulle</a>
+
+<!-- 📝 POSTAUKSEN OTSIKKO -->
+<div class="title">
+    LAITAT TÄHÄN MNÄIN
+</div>
+
+<!-- 📄 POSTAUKSEN SISÄLTÖ -->
+<div class="content">
+    LAITAT TÄHÄN MITÄ SIINÄ LUKEE
+</div>
+
+<!-- 💬 KOMMENTIT -->
+<div class="comment-title">
+    Kommentit tähän postaukseen
+</div>
+
+<div id="disqus_thread"></div>
+
+<script>
+var disqus_config = function () {
+    this.page.url = window.location.href;
+    this.page.identifier = window.location.href;
+};
+
+(function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://taikatemppu-link.disqus.com/embed.js';
+    d.head.appendChild(s);
+})();
+</script>
+
+</body>
+</html>
