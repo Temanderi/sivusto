@@ -1,9 +1,23 @@
-<header class="hero">
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogi</title>
 
-    <div class="hero-title">
-        <h1>Blogi</h1>
+    <link rel="stylesheet" href="./style.css?v=100">
+</head>
 
-        <p class="intro-text">Olen pieni mies, pienessä maailmassa.
+<body>
+
+    <div class="page">
+
+        <header class="hero">
+
+            <div class="hero-title">
+                <h1>Blogi</h1>
+
+                <p class="intro-text">Olen pieni mies, pienessä maailmassa.
 Täällä löytyy toinen toistaan kummallisempia asioita
 ja pääni pyörii kuin tuuliviiri.
 
@@ -29,8 +43,19 @@ Toivottavasti sais tänne tuotetua
 antoisaa materiaalia, josta saisi irti
 ajatuksia niin hyvässä kuin pahassa tai
 ainakin leveän virneen suupieliin.</p>
+            </div>
+
+            <img src="./banner2.png?v=100" alt="Blogin bannerikuva" class="banner">
+
+        </header>
+
+        <main>
+            <div id="posts"></div>
+        </main>
+
     </div>
 
-    <img src="./banner2.png?v=1" alt="Blogin bannerikuva" class="banner banner-bottom">
+    <script src="./index.js?v=100"></script>
 
-</header>
+</body>
+</html>
