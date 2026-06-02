@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Merriweather:wght@400;700;900&display=swap');
 
 /* ================================================= */
-/* KOKO SIVUSTON PERUSASETUKSET                      */
+/* PERUSASETUKSET                                    */
 /* ================================================= */
 
 * {
@@ -19,20 +19,18 @@ body {
     font-family: "Merriweather", Georgia, serif;
 
     background:
-        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.9)),
-        radial-gradient(circle at top left, #244f2f, transparent 35%),
-        radial-gradient(circle at bottom right, #4f2424, transparent 35%),
+        linear-gradient(rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.92)),
+        radial-gradient(circle at top left, #244f2f, transparent 36%),
+        radial-gradient(circle at bottom right, #4f2424, transparent 36%),
         #101010;
 
     color: #f2f2f2;
 }
 
-/* Linkit yleisesti */
-
 a {
     color: #b9ff9d;
     text-decoration: none;
-    border-bottom: 1px solid rgba(185, 255, 157, 0.5);
+    border-bottom: 1px solid rgba(185, 255, 157, 0.45);
 }
 
 a:hover {
@@ -49,26 +47,41 @@ a:hover {
 .page {
     width: min(951px, calc(100% - 24px));
     margin: 0 auto;
-    padding: 18px 0 50px;
+    padding: 18px 0 60px;
 }
 
-/* Bannerialue */
+/* Yläosan laatikko */
 
 .hero {
-    background: #171717;
-    border: 1px solid rgba(180, 255, 170, 0.25);
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(18, 18, 18, 0.96);
+
+    border: 1px solid rgba(185, 255, 157, 0.25);
     border-radius: 16px;
-    padding: 10px;
+
+    padding: 16px;
 
     box-shadow:
         0 0 35px rgba(0, 0, 0, 0.75),
         inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-/* Etusivun bannerikuva */
+/* Tämä pakottaa otsikon ja tekstin ylemmäs */
+.hero-title {
+    order: 1;
 
+    padding: 10px 12px 18px;
+    text-align: center;
+}
+
+/* Tämä pakottaa bannerin alas tekstin jälkeen */
 .banner {
+    order: 2;
+
     display: block;
+
     width: 100%;
     max-width: 951px;
     height: 160px;
@@ -76,22 +89,31 @@ a:hover {
     object-fit: cover;
     object-position: center;
 
-    border-radius: 10px;
+    border-radius: 12px;
+
+    margin-top: 18px;
+
+    border: 1px solid rgba(185, 255, 157, 0.22);
+
+    box-shadow:
+        0 12px 34px rgba(0, 0, 0, 0.55),
+        0 0 24px rgba(185, 255, 157, 0.10);
 }
 
-/* Etusivun otsikko bannerin alla */
-
-.hero-title {
-    padding: 18px 12px 12px;
-    text-align: center;
+/* Jos käytät class="banner banner-bottom" */
+.banner-bottom {
+    margin-top: 22px;
 }
+
+/* Etusivun otsikko */
 
 .hero-title h1 {
-    margin: 0;
+    margin: 0 0 14px;
 
     font-family: "Metal Mania", Arial, sans-serif;
-    font-size: clamp(3rem, 9vw, 6rem);
+    font-size: clamp(3.2rem, 9vw, 6rem);
     font-weight: 400;
+
     text-transform: uppercase;
     letter-spacing: 0.08em;
 
@@ -99,17 +121,28 @@ a:hover {
 
     text-shadow:
         0 0 8px rgba(185, 255, 157, 0.7),
-        0 0 22px rgba(185, 255, 157, 0.3);
+        0 0 24px rgba(185, 255, 157, 0.35);
 }
 
-.hero-title p {
-    margin: 8px 0 0;
+/* Etusivun esittelyteksti */
 
-    color: #cfcfcf;
+.hero-title p,
+.intro-text {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color: #d8d8d8;
+
     font-size: 1rem;
+    line-height: 1.75;
+
+    text-align: center;
+
+    white-space: pre-line;
 }
 
-/* Blogipostausten alue etusivulla */
+/* Blogipostausten alue */
 
 main {
     margin-top: 24px;
@@ -120,13 +153,14 @@ main {
     gap: 18px;
 }
 
-/* Jokainen index.js:n luoma postauskortti */
+/* Index.js:n luomat postauskortit */
 
 #posts > * {
     background: rgba(22, 22, 22, 0.95);
 
+    border: 1px solid rgba(185, 255, 157, 0.18);
     border-left: 6px solid #b9ff9d;
-    border-radius: 12px;
+    border-radius: 14px;
 
     padding: 22px;
 
@@ -144,20 +178,22 @@ main {
         0 0 20px rgba(185, 255, 157, 0.08);
 }
 
-/* Otsikot etusivun postauskorteissa */
+/* Postauskorttien otsikot etusivulla */
 
 #posts h2,
 #posts h3 {
     margin-top: 0;
+    margin-bottom: 10px;
 
     font-family: "Metal Mania", Arial, sans-serif;
     font-weight: 400;
+    font-size: 2.2rem;
     letter-spacing: 0.04em;
 
     color: #ffd479;
 }
 
-/* Leipäteksti etusivun postauskorteissa */
+/* Postauskorttien teksti etusivulla */
 
 #posts p {
     color: #eeeeee;
@@ -165,7 +201,7 @@ main {
     font-size: 1.05rem;
 }
 
-/* Päivämäärä etusivun postauskortissa, jos sellainen joskus lisätään */
+/* Päivämäärä etusivun korteissa */
 
 #posts time,
 #posts .post-date,
@@ -176,7 +212,7 @@ main {
 
     color: #b9ff9d;
     font-size: 0.9rem;
-    font-weight: 700;
+    font-weight: 900;
     letter-spacing: 0.04em;
 }
 
@@ -189,7 +225,7 @@ main {
 
 /* ================================================= */
 /* YKSITTÄINEN POSTAUSSIVU                           */
-/* postaus1.html, postaus2.html jne.                 */
+/* postaus1.html jne.                                */
 /* Vaatii: <body class="post-page">                  */
 /* ================================================= */
 
@@ -204,10 +240,11 @@ body.post-page {
         linear-gradient(180deg, #050705 0%, #080808 100%);
 
     color: #eeeeee;
+
     font-family: "Merriweather", Georgia, serif;
 }
 
-/* Koko postausalue keskelle */
+/* Postaussivun koko keskitetty alue */
 
 .post-wrapper {
     width: min(950px, calc(100% - 32px));
@@ -217,7 +254,8 @@ body.post-page {
 
 /* Takaisin-linkki */
 
-.back-link {
+.back-link,
+body.post-page > a:first-child {
     display: inline-block;
 
     margin-bottom: 24px;
@@ -238,12 +276,13 @@ body.post-page {
         0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
-.back-link:hover {
+.back-link:hover,
+body.post-page > a:first-child:hover {
     background: #d6ffc8;
     color: #111111 !important;
 }
 
-/* Itse postauskortti */
+/* Varsinainen postauskortti */
 
 .post-card {
     background: rgba(14, 16, 14, 0.96);
@@ -278,7 +317,7 @@ body.post-page {
         0 0 35px rgba(255, 212, 121, 0.16);
 }
 
-/* Päivämäärä postaus-sivulla */
+/* Päivämäärä */
 
 .post-date {
     display: block;
@@ -292,13 +331,11 @@ body.post-page {
     letter-spacing: 0.04em;
 }
 
-/* Jos päivämäärä on tyhjä, sitä ei näytetä */
-
 .post-date:empty {
     display: none;
 }
 
-/* Postauksen teksti */
+/* Postauksen sisältö */
 
 .post-content {
     color: #f1f1f1;
@@ -315,7 +352,7 @@ body.post-page {
     margin-bottom: 0;
 }
 
-/* Jos lisäät postaukseen väliotsikoita */
+/* Väliotsikot postauksen sisällä */
 
 .post-content h2,
 .post-content h3 {
@@ -323,6 +360,7 @@ body.post-page {
     margin-bottom: 0.6em;
 
     color: #ffd479;
+
     font-family: "Metal Mania", Arial, sans-serif;
     font-weight: 400;
     letter-spacing: 0.04em;
@@ -336,7 +374,7 @@ body.post-page {
     font-size: 2rem;
 }
 
-/* Jos lisäät postaukseen kuvan */
+/* Kuvat postauksen sisällä */
 
 .post-content img {
     display: block;
@@ -369,8 +407,6 @@ body.post-page {
         0 0 28px rgba(185, 255, 157, 0.08);
 }
 
-/* Kommentit-otsikko */
-
 .comment-title {
     margin-top: 0;
     margin-bottom: 20px;
@@ -383,16 +419,14 @@ body.post-page {
     letter-spacing: 0.04em;
 }
 
-/* Disqus */
-
 #disqus_thread {
     width: 100%;
 }
 
 
 /* ================================================= */
-/* VANHAN POSTAUSRAKENTEEN VARMISTUSTYYLIT           */
-/* Jos jossain sivulla on vielä .title ja .content   */
+/* VANHA POSTAUSRAKENNE                              */
+/* Tukee vielä .title ja .content -rakennetta        */
 /* ================================================= */
 
 body.post-page .title {
@@ -432,14 +466,18 @@ body.post-page .content {
         inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
+body.post-page .comment-title {
+    width: min(950px, calc(100% - 32px));
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* ================================================= */
-/* MOBIILINÄKYMÄ                                     */
+/* MOBIILI                                           */
 /* ================================================= */
 
 @media (max-width: 600px) {
-
-    /* Etusivu */
 
     .page {
         width: calc(100% - 16px);
@@ -447,21 +485,28 @@ body.post-page .content {
     }
 
     .hero {
-        padding: 8px;
+        padding: 10px;
         border-radius: 12px;
+    }
+
+    .hero-title {
+        padding: 8px 6px 14px;
+    }
+
+    .hero-title h1 {
+        font-size: clamp(3rem, 16vw, 4.5rem);
+    }
+
+    .hero-title p,
+    .intro-text {
+        font-size: 0.95rem;
+        line-height: 1.65;
     }
 
     .banner {
         height: 110px;
         border-radius: 8px;
-    }
-
-    .hero-title {
-        padding: 14px 8px 8px;
-    }
-
-    .hero-title h1 {
-        font-size: clamp(3rem, 16vw, 4.5rem);
+        margin-top: 16px;
     }
 
     #posts > * {
@@ -469,7 +514,10 @@ body.post-page .content {
         border-left-width: 4px;
     }
 
-    /* Postaussivu */
+    #posts h2,
+    #posts h3 {
+        font-size: 1.9rem;
+    }
 
     .post-wrapper {
         width: calc(100% - 20px);
@@ -512,8 +560,6 @@ body.post-page .content {
         font-size: 1.9rem;
     }
 
-    /* Vanhan rakenteen mobiilityylit */
-
     body.post-page .title {
         width: calc(100% - 20px);
         font-size: clamp(2.6rem, 14vw, 4rem);
@@ -525,13 +571,5 @@ body.post-page .content {
         border-left-width: 5px;
         border-radius: 16px;
         font-size: 1.05rem;
-
-
-        
     }
-
-
-    .banner-bottom {
-    margin-top: 24px;
-}
 }
