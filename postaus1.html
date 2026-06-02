@@ -5,26 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postaus</title>
 
-    <!-- CSS pitää olla HEAD-osiossa -->
-    <link rel="stylesheet" href="./style.css?v=25">
+    <link rel="stylesheet" href="./style.css?v=30">
 </head>
 
 <body class="post-page">
 
     <main class="post-wrapper">
 
-        <!-- 🔙 Takaisin -->
+        <!-- 🔙 TAKAISIN-LINKKI -->
         <a href="./index.html" class="back-link">← Takaisin etusivulle</a>
 
-        <!-- 📝 POSTAUS -->
+
+        <!-- =============================== -->
+        <!-- 📝 MUOKKAA POSTAUSTA TÄSTÄ ALAS -->
+        <!-- =============================== -->
+
         <article class="post-card">
 
-            <!-- MUOKKAA OTSIKKO TÄSTÄ -->
+            <!-- OTSIKKO -->
             <h1 class="post-title">
                 Tämä on postauksen otsikko
             </h1>
 
-            <!-- MUOKKAA TEKSTI TÄSTÄ -->
+            <!-- PÄIVÄMÄÄRÄ, VALINNAINEN -->
+            <!-- 
+                Jos haluat päivämäärän näkyviin, kirjoita se tähän:
+
+                <time class="post-date" datetime="2026-06-02">2.6.2026</time>
+
+                Jos et halua päivämäärää näkyviin, jätä time-kohta tyhjäksi näin:
+            -->
+            <time class="post-date" datetime=""></time>
+
+            <!-- POSTAUKSEN TEKSTI -->
             <div class="post-content">
 
                 <p>
@@ -32,12 +45,17 @@
                 </p>
 
                 <p>
-                    Jos haluat uuden kappaleen, kopioi uusi &lt;p&gt;...&lt;/p&gt;-kohta tähän alle.
+                    Jos haluat lisätä uuden kappaleen, kopioi uusi &lt;p&gt;...&lt;/p&gt;-kohta tähän alle.
                 </p>
 
             </div>
 
         </article>
+
+        <!-- =============================== -->
+        <!-- 📝 MUOKATTAVA POSTAUS LOPPUU    -->
+        <!-- =============================== -->
+
 
         <!-- 💬 KOMMENTIT -->
         <section class="comments-card">
@@ -51,6 +69,7 @@
         </section>
 
     </main>
+
 
     <!-- DISQUS -->
     <script>
