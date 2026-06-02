@@ -525,5 +525,13 @@ body.post-page .content {
         border-left-width: 5px;
         border-radius: 16px;
         font-size: 1.05rem;
+
+
+        
     }
+
+
+    .banner-bottom {
+    margin-top: 24px;
+}
 }
