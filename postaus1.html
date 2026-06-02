@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html lang="fi">
-
-<link rel="stylesheet" href="style.css">
-    
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postaus</title>
 
+    <link rel="stylesheet" href="style.css?v=12">
 </head>
-<body>
 
-<!-- 🔙 takaisin -->
-<a href="index.html">← Takaisin etusivulle</a>
+<body class="post-page">
 
-<!-- 📝 POSTAUKSEN OTSIKKO -->
-<div class="title">
-    Tämä on postauksen otsikko
-</div>
+    <main class="post-wrapper">
 
-<!-- 📄 POSTAUKSEN SISÄLTÖ -->
-<div class="content">
-    Tässä kirjoitat itse postauksen tekstin. Voit muokata tätä vapaasti.
-</div>
+        <!-- 🔙 TAKAISIN-LINKKI -->
+        <a href="index.html" class="back-link">← Takaisin etusivulle</a>
 
-<!-- 💬 KOMMENTIT -->
-<div class="comment-title">
-    Kommentit tähän postaukseen
-</div>
 
-<div id="disqus_thread"></div>
+        <!-- =============================== -->
+        <!-- 📝 MUOKKAA POSTAUSTA TÄSTÄ ALAS -->
+        <!-- =============================== -->
 
-<script>
-var disqus_config = function () {
-    this.page.url = window.location.href;
-    this.page.identifier = window.location.href;
-};
+        <article class="post-card">
 
-(function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://taikatemppu-link.disqus.com/embed.js';
-    d.head.appendChild(s);
-})();
-</script>
+            <!-- OTSIKKO -->
+            <h1 class="post-title">
+                Tämä on postauksen otsikko
+            </h1>
+
+            <!-- POSTAUKSEN TEKSTI -->
+            <div class="post-content">
+
+                <p>
+                    Tässä kirjoitat itse postauksen tekstin. Voit muokata tätä vapaasti.
+                </p>
+
+                <p>
+                    Voit lisätä uuden kappaleen kopioimalla uuden &lt;p&gt;...&lt;/p&gt;-kohdan.
+                </p>
+
+            </div>
+
+        </article>
+
+        <!-- =============================== -->
+        <!-- 📝 MUOKATTAVA POSTAUS LOPPUU    -->
+        <!-- =============================== -->
+
+
+        <!-- 💬 KOMMENTIT -->
+        <section class="comments-card">
+
+            <h2 class="comment-title">
+                Kommentit tähän postaukseen
+            </h2>
+
+            <div id="disqus_thread"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- DISQUS -->
+    <script>
+    var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = window.location.pathname;
+    };
+
+    (function() {
+        var d = document;
+        var s = d.createElement('script');
+
+        s.src = 'https://taikatemppu-link.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+
+    <noscript>
+        Ota JavaScript käyttöön nähdäksesi kommentit.
+    </noscript>
 
 </body>
 </html>
