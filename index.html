@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="fi">
-
-<link rel="stylesheet" href="style.css">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogi</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>Blogi</h1>
+    <header class="site-header">
+        <img src="banner.png" alt="Blogin bannerikuva" class="banner">
 
-<div id="posts"></div>
+        <div class="header-text">
+            <h1>Blogi</h1>
+            <p>Ajatuksia, tarinoita ja muita mielen sähköjäniksiä.</p>
+        </div>
+    </header>
 
-<script src="index.js"></script>
+    <main class="content">
+        <section id="posts" class="posts">
+            <!-- Blogipostaukset tulevat tänne index.js-tiedostosta -->
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Teemu Hernesniemi</p>
+    </footer>
+
+    <script src="index.js"></script>
 
 </body>
 </html>
