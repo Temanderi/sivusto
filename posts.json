@@ -1,6 +1,8 @@
 [
   {
-    "title": "Postaus 1",
-    "slug": "postaus1"
+        "title": "Postaus 1",
+        "date": "01/06/2009",
+        "excerpt": "Tämä on ensimmäinen postaus.",
+        "url": "./postaus1.html"
   }
 ]
