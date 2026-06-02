@@ -1,150 +1,137 @@
-* {
-    box-sizing: border-box;
-}
+/* ============================= */
+/* YKSITTÄINEN POSTAUSSIVU       */
+/* postaus1.html, postaus2.html  */
+/* ============================= */
 
+/* Tehdään koko sivusta keskitetty ja luettava */
 body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.9)),
-        radial-gradient(circle at top left, #244f2f, transparent 35%),
-        radial-gradient(circle at bottom right, #4f2424, transparent 35%),
-        #101010;
-    color: #f2f2f2;
+    padding: 0;
 }
 
-/* Koko sivun kehys */
+/* Takaisin etusivulle -linkki */
+body > a:first-child {
+    display: inline-block;
+    margin: 24px auto 10px;
+    padding: 8px 14px;
+    max-width: 900px;
 
-.page {
-    width: min(951px, calc(100% - 24px));
-    margin: 0 auto;
-    padding: 18px 0 50px;
-}
-
-/* Bannerialue */
-
-.hero {
-    background: #171717;
-    border: 1px solid rgba(180, 255, 170, 0.25);
-    border-radius: 16px;
-    padding: 10px;
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.75);
-}
-
-/* Tämä pitää bannerin pienenä */
-
-.banner {
-    display: block;
-    width: 100%;
-    max-width: 951px;
-    height: 160px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
-}
-
-/* Otsikko bannerin alla */
-
-.hero-title {
-    padding: 18px 12px 12px;
-    text-align: center;
-}
-
-.hero-title h1 {
-    margin: 0;
-    font-size: clamp(2.2rem, 7vw, 4.2rem);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
     color: #b9ff9d;
-    text-shadow:
-        0 0 8px rgba(185, 255, 157, 0.7),
-        0 0 22px rgba(185, 255, 157, 0.3);
-}
-
-.hero-title p {
-    margin: 8px 0 0;
-    color: #cfcfcf;
+    font-weight: bold;
     font-size: 1rem;
+
+    text-decoration: none;
+    border: 1px solid rgba(185, 255, 157, 0.45);
+    border-radius: 999px;
+    background: rgba(10, 20, 10, 0.75);
+    box-shadow: 0 0 16px rgba(185, 255, 157, 0.12);
 }
 
-/* Blogipostausten alue */
-
-main {
-    margin-top: 24px;
+/* Varsinainen postauksen otsikko ja teksti */
+body > h1,
+body > h2,
+body > p {
+    width: min(900px, calc(100% - 32px));
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#posts {
-    display: grid;
-    gap: 18px;
+/* Postauksen otsikko */
+body > h1,
+body > h2 {
+    margin-top: 28px;
+    margin-bottom: 14px;
+
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    color: #ffd479;
+    text-shadow:
+        0 0 10px rgba(255, 212, 121, 0.45),
+        0 0 26px rgba(255, 212, 121, 0.18);
 }
 
-/* Tämä osuu index.js:n luomiin postauksiin,
-   vaikka niillä ei olisi class="post" */
-
-#posts > * {
-    background: rgba(22, 22, 22, 0.95);
+/* Postauksen leipäteksti */
+body > p {
+    background: rgba(18, 18, 18, 0.92);
     border-left: 6px solid #b9ff9d;
-    border-radius: 12px;
-    padding: 22px;
+    border-radius: 14px;
+
+    padding: 24px;
+    margin-top: 12px;
+    margin-bottom: 28px;
+
+    color: #eeeeee;
+    font-size: 1.15rem;
+    line-height: 1.75;
+
     box-shadow:
-        0 10px 24px rgba(0, 0, 0, 0.45),
+        0 12px 32px rgba(0, 0, 0, 0.45),
         inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
-/* Otsikot blogiteksteissä */
+/* Jos postauksessa on kuva/banneri */
+body > img,
+.post-banner,
+.banner {
+    display: block;
+    width: min(951px, calc(100% - 32px));
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
 
-#posts h2,
-#posts h3 {
-    margin-top: 0;
-    color: #ffd479;
+    margin: 18px auto 24px;
+    border-radius: 14px;
+
+    border: 1px solid rgba(185, 255, 157, 0.28);
+    box-shadow:
+        0 12px 34px rgba(0, 0, 0, 0.55),
+        0 0 24px rgba(185, 255, 157, 0.10);
 }
 
-/* Leipäteksti */
-
-#posts p {
-    color: #eeeeee;
-    line-height: 1.7;
-    font-size: 1.05rem;
+/* Kommenttiteksti */
+body > p:nth-of-type(2),
+body > h3 {
+    width: min(900px, calc(100% - 32px));
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Linkit */
+/* Disqus-kommenttialue */
+#disqus_thread {
+    width: min(900px, calc(100% - 32px));
+    margin: 38px auto 80px;
+    padding: 22px;
 
-a {
-    color: #b9ff9d;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(185, 255, 157, 0.5);
+    background: rgba(12, 12, 12, 0.92);
+    border: 1px solid rgba(185, 255, 157, 0.18);
+    border-radius: 18px;
+
+    box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.55),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
-a:hover {
-    color: #ffffff;
-    border-bottom-color: #ffffff;
-}
-
-/* Pieni mobiilikorjaus */
-
+/* Mobiilissa vähän tiiviimpi */
 @media (max-width: 600px) {
-    .page {
-        width: calc(100% - 16px);
-        padding-top: 8px;
+    body > a:first-child {
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
-    .hero {
-        padding: 8px;
-        border-radius: 12px;
+    body > p {
+        padding: 18px;
+        font-size: 1.05rem;
+        border-left-width: 4px;
     }
 
+    body > img,
+    .post-banner,
     .banner {
         height: 110px;
-        border-radius: 8px;
+        border-radius: 10px;
     }
 
-    .hero-title {
-        padding: 14px 8px 8px;
-    }
-
-    #posts > * {
-        padding: 18px;
-        border-left-width: 4px;
+    #disqus_thread {
+        padding: 14px;
+        margin-top: 28px;
     }
 }
