@@ -1,224 +1,191 @@
+/* Perusasetukset */
+
 * {
     box-sizing: border-box;
 }
 
-:root {
-    --bg: #07070b;
-    --panel: rgba(18, 18, 27, 0.88);
-    --panel-strong: rgba(24, 24, 36, 0.96);
-    --text: #f1f1f4;
-    --muted: #b7b7c4;
-    --line: rgba(255, 255, 255, 0.12);
-    --accent: #d9b66f;
-    --accent-soft: rgba(217, 182, 111, 0.16);
-    --blue: #77b9ff;
-}
-
 html {
-    min-height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
     background:
-        radial-gradient(circle at top left, rgba(217, 182, 111, 0.16), transparent 34rem),
-        radial-gradient(circle at top right, rgba(91, 120, 255, 0.14), transparent 30rem),
-        linear-gradient(135deg, #050507 0%, #11111a 52%, #07070b 100%);
-    color: var(--text);
-    padding: 32px 18px;
+        radial-gradient(circle at top, rgba(120, 40, 40, 0.25), transparent 35%),
+        linear-gradient(180deg, #121212 0%, #1b1717 45%, #0d0d0d 100%);
+    color: #f2eee6;
+    line-height: 1.7;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 44px 44px;
-    mask-image: linear-gradient(to bottom, black, transparent 78%);
-}
+/* Yläosa ja banneri */
 
-.container {
-    width: min(980px, 100%);
+.site-header {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: clamp(22px, 4vw, 46px);
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 28px;
-    box-shadow: 0 24px 90px rgba(0, 0, 0, 0.58);
-    backdrop-filter: blur(10px);
+    padding: 24px 18px 10px;
+    text-align: center;
 }
 
 .banner {
-    display: block;
     width: 100%;
-    max-height: 230px;
+    max-height: 280px;
     object-fit: cover;
-    object-position: center;
-    margin: 0 auto 30px;
-    border-radius: 22px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
-}
-
-.site-header,
-.post-header {
-    text-align: center;
-    margin: 8px auto 34px;
-}
-
-.site-title,
-h1,
-.title {
-    margin: 0 auto 14px;
-    max-width: 820px;
-    text-align: center;
-    font-size: clamp(2.2rem, 7vw, 4.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    text-wrap: balance;
-}
-
-.site-lead,
-.post-lead {
-    max-width: 680px;
-    margin: 0 auto;
-    color: var(--muted);
-    font-size: clamp(1rem, 2.2vw, 1.18rem);
-    line-height: 1.65;
-}
-
-#posts {
-    display: grid;
-    gap: 18px;
-    margin-top: 24px;
-}
-
-.post-card,
-#posts > div {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.026));
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    overflow: hidden;
-    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-}
-
-.post-card:hover,
-#posts > div:hover {
-    transform: translateY(-4px);
-    border-color: rgba(217, 182, 111, 0.62);
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
-}
-
-.post-link {
     display: block;
-    padding: 24px;
-    color: var(--text);
-    text-decoration: none;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 215, 120, 0.35);
+    box-shadow:
+        0 0 25px rgba(0, 0, 0, 0.75),
+        0 0 45px rgba(150, 75, 30, 0.25);
 }
 
-.post-title,
-.post-link h2,
-h2 {
+.header-text {
+    margin-top: 22px;
+    padding: 12px;
+}
+
+.header-text h1 {
     margin: 0;
-    font-size: clamp(1.35rem, 3vw, 2rem);
-    line-height: 1.15;
-    color: #ffffff;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f6d28b;
+    text-shadow:
+        0 2px 0 #4a2613,
+        0 0 18px rgba(246, 210, 139, 0.28);
 }
 
-.post-card-arrow {
-    display: inline-block;
-    margin-top: 14px;
-    color: var(--accent);
-    font-size: 0.98rem;
-    letter-spacing: 0.02em;
+.header-text p {
+    margin: 8px auto 0;
+    max-width: 650px;
+    color: #d8c8b0;
+    font-size: 1.1rem;
 }
+
+/* Sisältöalue */
+
+.content {
+    max-width: 900px;
+    margin: 30px auto 60px;
+    padding: 0 18px;
+}
+
+.posts {
+    display: grid;
+    gap: 24px;
+}
+
+/* Blogipostauksen tyyli */
+
+.post,
+article {
+    background: rgba(24, 22, 22, 0.88);
+    border: 1px solid rgba(246, 210, 139, 0.22);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+}
+
+.post:hover,
+article:hover {
+    transform: translateY(-3px);
+    border-color: rgba(246, 210, 139, 0.48);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(246, 210, 139, 0.08);
+    transition: 0.25s ease;
+}
+
+.post h2,
+article h2 {
+    margin-top: 0;
+    color: #f6d28b;
+    font-size: 2rem;
+    line-height: 1.25;
+}
+
+.post p,
+article p {
+    color: #eee4d6;
+    font-size: 1.05rem;
+}
+
+/* Linkit */
 
 a {
-    color: var(--blue);
+    color: #ffcc75;
     text-decoration: none;
+    border-bottom: 1px solid rgba(255, 204, 117, 0.5);
 }
 
 a:hover {
-    color: #ffffff;
+    color: #fff0c2;
+    border-bottom-color: #fff0c2;
 }
 
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 24px;
-    padding: 10px 14px;
-    border: 1px solid var(--line);
+/* Napit, jos sellaisia tulee myöhemmin */
+
+button,
+.button {
+    display: inline-block;
+    background: linear-gradient(135deg, #8a3b22, #d09a48);
+    color: #140c08;
+    border: none;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.055);
-    color: var(--text);
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-.back-link:hover {
-    border-color: rgba(217, 182, 111, 0.62);
-    background: var(--accent-soft);
+button:hover,
+.button:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
 }
 
-.content {
-    max-width: 760px;
-    margin: 24px auto 0;
-    padding: clamp(20px, 4vw, 34px);
-    background: var(--panel-strong);
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    color: #e8e8ee;
-    font-size: clamp(1.08rem, 2vw, 1.28rem);
-    line-height: 1.8;
-    white-space: pre-wrap;
+/* Alatunniste */
+
+.site-footer {
+    text-align: center;
+    padding: 28px 18px;
+    color: #9f927f;
+    border-top: 1px solid rgba(246, 210, 139, 0.14);
+    background: rgba(0, 0, 0, 0.25);
 }
 
-p {
-    font-size: clamp(1.05rem, 2vw, 1.22rem);
-    line-height: 1.75;
-    color: #e3e3ea;
-}
+/* Mobiilinäkymä */
 
-.comment-title,
-.comment-header {
-    max-width: 760px;
-    margin: 46px auto 18px;
-    padding: 15px 18px;
-    border-left: 5px solid var(--accent);
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.055);
-    font-size: clamp(1.2rem, 2.7vw, 1.6rem);
-    font-weight: 700;
-    color: #ffffff;
-}
-
-#disqus_thread {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 12px 0 0;
-}
-
-@media (max-width: 640px) {
-    body {
-        padding: 18px 12px;
-    }
-
-    .container {
-        padding: 18px;
-        border-radius: 22px;
+@media (max-width: 600px) {
+    .site-header {
+        padding: 14px 10px 4px;
     }
 
     .banner {
-        border-radius: 17px;
-        margin-bottom: 24px;
+        border-radius: 12px;
+        max-height: 180px;
     }
 
-    .post-link {
+    .content {
+        margin-top: 20px;
+        padding: 0 12px;
+    }
+
+    .post,
+    article {
         padding: 20px;
+        border-radius: 14px;
+    }
+
+    .post h2,
+    article h2 {
+        font-size: 1.55rem;
+    }
+
+    .header-text p {
+        font-size: 1rem;
     }
 }
