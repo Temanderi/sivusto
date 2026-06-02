@@ -1,53 +1,67 @@
-const posts = [
-    {
-        title: "Postaus 1",
-        date: "",
-        excerpt: "Tämä on ensimmäinen postaus.",
-        url: "./postaus1.html"
-    },
-    {
-        title: "Postaus 2",
-        date: "",
-        excerpt: "Tämä on toinen postaus.",
-        url: "./postaus2.html"
-    },
-    {
-        title: "Jorma",
-        date: "",
-        excerpt: "Lyhyt kuvaus postauksesta.",
-        url: "./jorma.html"
-    },
-    {
-        title: "NIMEKSI JOTAIN",
-        date: "",
-        excerpt: "Lyhyt kuvaus postauksesta.",
-        url: "./nimeksi-jotain.html"
-    }
-];
+async function loadPosts() {
+    const postsContainer = document.getElementById("posts");
 
-const postsContainer = document.getElementById("posts");
-
-posts.forEach(function(post) {
-    const article = document.createElement("article");
-    article.className = "post-preview";
-
-    let dateHtml = "";
-
-    if (post.date && post.date.trim() !== "") {
-        dateHtml = `<time class="preview-date">${post.date}</time>`;
+    if (!postsContainer) {
+        return;
     }
 
-    article.innerHTML = `
-        <h2>
-            <a href="${post.url}">${post.title}</a>
-        </h2>
+    try {
+        /*
+            Jos tiedostosi nimi on posts.json, pidä tämä näin.
+            Jos tiedostosi nimi on postaus.json, vaihda riviksi:
 
-        ${dateHtml}
+            const response = await fetch("./postaus.json?v=1000");
+        */
+        const response = await fetch("./posts.json?v=1000");
 
-        <p>${post.excerpt}</p>
+        if (!response.ok) {
+            throw new Error("posts.json ei latautunut");
+        }
 
-        <a href="${post.url}" class="read-more">Lue lisää →</a>
-    `;
+        const posts = await response.json();
 
-    postsContainer.appendChild(article);
-});
+        postsContainer.innerHTML = "";
+
+        posts.forEach(function(post) {
+            const article = document.createElement("article");
+            article.className = "post-preview";
+
+            const title = post.title || "Nimetön postaus";
+            const url = post.url || "#";
+            const excerpt = post.excerpt || "";
+            const date = post.date || "";
+
+            let dateHtml = "";
+
+            if (date.trim() !== "") {
+                dateHtml = `<time class="preview-date">${date}</time>`;
+            }
+
+            article.innerHTML = `
+                <h2>
+                    <a href="${url}">${title}</a>
+                </h2>
+
+                ${dateHtml}
+
+                <p>${excerpt}</p>
+
+                <a href="${url}" class="read-more">Lue lisää →</a>
+            `;
+
+            postsContainer.appendChild(article);
+        });
+
+    } catch (error) {
+        postsContainer.innerHTML = `
+            <article class="post-preview">
+                <h2>Postauksia ei saatu ladattua</h2>
+                <p>Tarkista, että posts.json löytyy samasta kansiosta kuin index.html.</p>
+            </article>
+        `;
+
+        console.error(error);
+    }
+}
+
+loadPosts();
