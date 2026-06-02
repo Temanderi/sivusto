@@ -2,20 +2,17 @@ async function loadPosts() {
     const postsContainer = document.getElementById("posts");
 
     if (!postsContainer) {
+        console.error("Elementtiä #posts ei löytynyt.");
         return;
     }
 
-    try {
-        /*
-            Jos tiedostosi nimi on posts.json, pidä tämä näin.
-            Jos tiedostosi nimi on postaus.json, vaihda riviksi:
+    postsContainer.innerHTML = "";
 
-            const response = await fetch("./postaus.json?v=1000");
-        */
-        const response = await fetch("./posts.json?v=1000");
+    try {
+        const response = await fetch("./posts.json?v=2000");
 
         if (!response.ok) {
-            throw new Error("posts.json ei latautunut");
+            throw new Error("posts.json ei latautunut.");
         }
 
         const posts = await response.json();
@@ -53,14 +50,14 @@ async function loadPosts() {
         });
 
     } catch (error) {
+        console.error(error);
+
         postsContainer.innerHTML = `
             <article class="post-preview">
                 <h2>Postauksia ei saatu ladattua</h2>
                 <p>Tarkista, että posts.json löytyy samasta kansiosta kuin index.html.</p>
             </article>
         `;
-
-        console.error(error);
     }
 }
 
